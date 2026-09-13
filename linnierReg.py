@@ -1,22 +1,22 @@
 import pandas as pd 
 
 def data(file:str)->pd.DataFrame| Exception: 
+    # note the file uses x and y as the axis but stdard wont exept that i have to convert x-y for model  
     if (isinstance(file, str) == False):
         raise Exception("file path is not a valid string")
-    #elif file[-2::].lower != "csv": 
-        #raise Exception("file path requires a valid csv")
+    elif file[-4::].lower != ".csv": 
+        raise Exception("file path requires a valid csv")
 
     df = pd.read_csv(file)
-    df.dropna() 
-    # note the file uses x and y as the axis but stdard wont exept that i have to convert x-y for model 
-
+    df.dropna()
     return df 
 
-Opened = data("test.csv") 
+Opened = data("test.csv") # Used this as there was pathing buggs between main and this file  
 
+# This isnt used but could be accesed for extra data angside calculating evaluation metrcs 
 def L_one_loss(m:int, b:int, points:pd.DataFrame): 
-    # mean squered error
-    # # this is the error function total_error / float(len(points)) sum((y[i] - (m * x +b))**2 ) 
+    # mean squered error loss function 
+    # This is the error function total_error / float(len(points)) sum((y[i] - (m * x +b))**2 ) 
     total_error = 0 
     for i in range(0, len(points)): 
         x = points.iloc[i].x 
@@ -53,15 +53,13 @@ def regression(m, b, l:float, itterations:int):
     return m , b  
 
 
-
-
 """
+# This was used to make a dummy csv file with a clear upright trend i did also test more relivant datasets as well 
 def generatecsv(numitems: int , xlable="x" , ylable="y"): 
     lables = ""
     def gen(): 
         val = list(range(0, 200))
         val_2 = list(range(0, 200 , 2))
-        
         return val , val_2 
     
     lables += f"{xlable},{ylable}\n"
