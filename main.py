@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt 
 import matplotlib.animation as am 
-from linnierReg import data, regression , Opened 
+from linearReg import data, regression , Opened 
 
 
 def main(): 
