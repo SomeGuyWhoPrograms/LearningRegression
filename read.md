@@ -15,3 +15,7 @@ In the end i used this video -> https://youtu.be/VmbA0pi2cRQ?si=1ersMep109gBRTE9
 As a helper to complete the code and made notes as i wrote it down. 
 In the end my original code is just the matplotlib animations in main, and the pandas data cleaning i did to open and formulate the data in linerReg. I also made a little csv generator to test different different datasets with vary direct trends this is commented out in the linerReg file. 
  
+Plans to improve! 
+- Do math this project is quite old so if I did it again now it would probably be good. i just wanted to show my progression and that unfortunately requires me to publish my bad learner code :) 
+- look at implementing new stuff that i have learnt on to this and other projects:) 
+- Work on spelling PLEASE DO NOT LOOK AT THE COMMIT MESSAGES! 
